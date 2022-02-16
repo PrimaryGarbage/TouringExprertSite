@@ -10,8 +10,17 @@ a {
     text-decoration: none;
 }
 
-h1 {
+main {
+    width: 70vw;
+    margin: auto;
+}
 
+header {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid black;
 }
 
 nav {
@@ -75,42 +84,3 @@ footer a:hover {
     color: rgb(85, 46, 175);
 }
 
-#dynamic-img-box {
-    overflow: hidden;
-    height: 65vh;
-    position: relative;
-}
-
-#dynamic-img {
-    width: 100%;
-    position: absolute;
-    z-index: -1;
-}
-
-#dynamic-img-box #center-logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: rgb(255, 255, 255);
-}
-
-#dynamic-img-box #center-logo p {
-    letter-spacing: 4px;
-    font-size: 18px;
-}
-
-.section-box {
-    background-color: white;
-    height: 450px;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-    font-size: 13px;
-    letter-spacing: 2px;
-}
-
-.section-box:nth-of-type(even) {
-    background-color: rgb(247, 247, 247);
-}

@@ -1,10 +1,8 @@
-let bgImgContainer = document.getElementById("background-img-box");
+let dynamicImgBox = document.getElementById("dynamic-img-box");
 const bgPath = "./res/img/background/bg";
 const bgExtension = ".jpg"
-const bgChangeTime = 10000;
-const maxBgImgScale = 1.3;
-
-
+const bgChangeTime = 10000; // time between bg image chahges
+const maxBgImgScale = 1.3;  // initilial bg image scale
 
 setNextBg.currentBg = 0;
 setNextBg.maxBg = 6;
@@ -77,7 +75,7 @@ function setNextBg()
 {
     setNextBg.currentBg += 1;
     if(setNextBg.currentBg >= setNextBg.maxBg) setNextBg.currentBg = 1;
-    const newImg = new DynamicImg(bgImgContainer, "background-img", setNextBg.currentBg, setNextBg.scaleDelta, setNextBg.opacityDelta);
+    const newImg = new DynamicImg(dynamicImgBox, "dynamic-img", setNextBg.currentBg, setNextBg.scaleDelta, setNextBg.opacityDelta);
     if(setNextBg.currentImg) setNextBg.currentImg.remove();
     setNextBg.currentImg = newImg;
 }
