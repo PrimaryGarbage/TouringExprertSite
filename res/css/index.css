@@ -74,11 +74,29 @@ footer a:hover {
 
 #background-img-box {
     overflow: hidden;
-    height: 70vh;
+    height: 65vh;
+    position: relative;
 }
 
-#background-img-box img {
+#background-img {
     width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+#background-img-box #center-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+#background-img-box #center-logo p {
+    letter-spacing: 4px;
+    font-size: 18px;
 }
 
 .section-box {
