@@ -6,8 +6,8 @@ const maxBgImgScale = 1.3;  // initilial bg image scale
 
 setNextBg.currentBg = 0;
 setNextBg.maxBg = 6;
-setNextBg.scaleDelta = 0.0001;
-setNextBg.opacityDelta = 0.002;
+setNextBg.scaleDelta = 0.0004;
+setNextBg.opacityDelta = 0.008;
 setNextBg.currentImg = null;
 
 class DynamicImg
@@ -24,22 +24,28 @@ class DynamicImg
         this.setScale(maxBgImgScale);
         this.currentScale = maxBgImgScale;
         this.currentOpacity = 0.0;
-        this.scaleIntervalID = setInterval((function() {
+        requestAnimationFrame((function scaleStep() {
             this.currentScale -= this.scaleDelta;
             this.setScale(this.currentScale);
             if(this.currentScale <= 1.0)
             {
                 this.setScale(1.0);
-                clearInterval(this.scaleIntervalID, 20);
+            }
+            else
+            {
+                requestAnimationFrame((scaleStep).bind(this))
             }
         }).bind(this));
-        this.opacityIntervalID = setInterval((function() {
+        requestAnimationFrame((function opacityStep() {
             this.currentOpacity += this.opacityDelta;
             this.setOpacity(this.currentOpacity);
             if(this.currentOpacity >= 1.0)
             {
                 this.setOpacity(1.0);
-                clearInterval(this.opacityIntervalID, 20);
+            }
+            else
+            {
+                requestAnimationFrame((opacityStep).bind(this));
             }
         }).bind(this));
     }
@@ -56,13 +62,17 @@ class DynamicImg
 
     remove()
     {
-        this.opacityIntervalID = setInterval((function() {
+        requestAnimationFrame((function opacityStep() {
             this.currentOpacity -= this.opacityDelta;
             this.setOpacity(this.currentOpacity);
-            if(this.currentOpacity < 0.0)
+            if(this.currentOpacity <= 0.0)
             {
-                clearInterval(this.opacityIntervalID);
+                this.setOpacity(0.0);
                 this.img.remove();
+            }
+            else
+            {
+                requestAnimationFrame((opacityStep).bind(this));
             }
         }).bind(this));
     }
