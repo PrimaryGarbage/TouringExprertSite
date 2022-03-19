@@ -30,6 +30,11 @@ nav img {
     height: 60px;
 }
 
+#main-container {
+    width: 65vw;
+    margin: auto;
+}
+
 #nav-options {
     width: 60%;
     text-align: left;
@@ -60,6 +65,7 @@ nav img {
 }
 
 footer {
+    width: auto;
     padding: 10px;
     background-color: rgb(37, 37, 37);
     color: rgb(141, 141, 141);

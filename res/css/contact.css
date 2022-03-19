@@ -1,7 +1,3 @@
-main {
-    width: 65vw;
-    margin: auto;
-}
 
 header {
     text-align: center;
@@ -31,6 +27,7 @@ header {
 
 #email-form-div {
     text-align: center;
+    margin-right: 0;
 }
 
 .email-input {
@@ -64,8 +61,12 @@ header {
     background-color: #4f45bb;
 }
 
+#contact-info-div {
+    margin-left: 0;
+}
+
 #contact-info-div p {
-    font-size: 21px;
+    font-size: 19px;
     color: rgb(92, 92, 92);
     margin: 40px 0px;
 }

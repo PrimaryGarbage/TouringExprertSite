@@ -33,13 +33,13 @@
     $visitor_email = $_POST['email'];
     $message = $_POST['message'];
 
-    $to = "artstudioexp@gmail.com";
+    $to = "kv@artstudiopro.com";
     $from_email = "kv@artstudiopro.com";
     $subject = "New Touring Expert website visitor email.";
     $headers = "From: $from_email \r\n";
     $headers .= "Reply-To: $visitor_email \r\n";
-    $email_body = "You have received a new message from the user $name.\n".
-    "Here is the message:\n\n$message\n\n"."Reply to: $visitor_email";
+    $email_body = "Вы получили новое сообщение от пользователя $name.\n".
+    "Сообщение:\n\n$message\n\n"."Reply to: $visitor_email";
 
     if(mail($to, $subject, $email_body, $headers))
     {
