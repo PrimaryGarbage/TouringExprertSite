@@ -6,6 +6,7 @@
 
 #dynamic-img {
 	width: 100%;
+	height: auto;
 	position: absolute;
 	z-index: -1;
 }
@@ -24,14 +25,21 @@
 	font-size: 18px;
 }
 
+#center-logo img {
+	width: 100%;
+}
+
 .section-box {
 	background-color: white;
 	min-height: 400px;
+	overflow-y: hidden;
 	padding: 20px;
 	box-sizing: border-box;
 	text-align: center;
 	font-size: 13px;
 	letter-spacing: 2px;
+	position: relative;
+	transition: height 1.0s ease-in-out;
 }
 
 .section-box:nth-of-type(even) {
@@ -39,22 +47,21 @@
 }
 
 .paragraph-content {
-	line-height: 200%;
+	line-height: 220%;
 	font-size: 17px;
 }
 
 #dynamic-paragraph {
 	color: rgb(149, 132, 247);
 	height: fit-content;
-	font-size: 49px;
+	font-size: 46px;
 	margin: 10px;
 	letter-spacing: 1px;
 	font-weight: bold;
 	border-right: 5px solid rgb(209, 201, 255);
-	padding-right: 20px;
+	padding-right: 10px;
 	padding-bottom: 10px;
 	overflow: hidden;
-	transform: scale(100%, 0%);
 }
 
 #dynamic-paragraph p {
@@ -63,4 +70,30 @@
 
 #dynamic-paragraph p:last-child {
 	margin: 0px 10px 0px 10px;
+}
+
+.more-btn {
+	font-size: 30px;
+	background-color: rgba(184, 184, 184, 0.329);
+	border-radius: 12px;
+	cursor: pointer;
+	transition: all 0.3s;
+	position: absolute;
+	bottom: 10px;
+}
+
+.more-btn:hover {
+	background-color: rgba(105, 105, 105, 0.637);
+	color: white;
+}
+
+.additional-info {
+	display: none;
+}
+
+.additional-info p {
+	text-align: left;
+	font-size: 15px;
+	line-height: 20px;
+	tab-size: 4;
 }

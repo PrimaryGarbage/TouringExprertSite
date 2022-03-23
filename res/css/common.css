@@ -30,26 +30,51 @@ nav img {
 }
 
 .center-65 {
+	width: 1300px;
+	margin: auto;
+}
+
+.center-65v {
 	width: 65vw;
 	margin: auto;
 }
 
+.center-65perc {
+	width: 65%;
+	margin: auto;
+}
+
+.center-70perc {
+	width: 70%;
+	margin: auto;
+}
+
+.center-80perc {
+	width: 80%;
+	margin: auto;
+}
+
 .center-70 {
-	width: 70vw;
+	width: 1400vw;
 	margin: auto;
 }
 
 .horizontal-container {
 	display: flex;
 	justify-content: space-between;
+	flex-direction: row;
 }
 
-.horizontal-container-flex-element {
+.verical-container {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+.container-flex-element {
 	flex-grow: 1;
-	flex-shrink: 1;
 	flex-basis: 1px; /* makes width equal in a flex container */
 	margin: 10px;
-	justify-content: center;
 }
 
 #nav-options {
@@ -123,16 +148,17 @@ footer a:hover {
 
 .block-center {
 	margin: auto;
+	width: auto;
 }
 
 .text-center {
-	text-align: center;
+	text-align: center !important;
 }
 
 .text-left {
-	text-align: left;
+	text-align: left !important;
 }
 
 .text-right {
-	text-align: right;
+	text-align: right !important;
 }
