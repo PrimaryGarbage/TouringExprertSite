@@ -1,95 +1,81 @@
-
 header {
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 26px;
-    letter-spacing: 2px;
-    border-bottom: 1px solid black;
-}
-
-.horizontal-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.contacts-flex-element {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 1px;        /* makes width equal in a flex container */
-    margin: 10px;
-    justify-content: center;
+	text-align: center;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	font-size: 26px;
+	letter-spacing: 2px;
+	border-bottom: 1px solid black;
 }
 
 #email-form {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 #email-form-div {
-    text-align: center;
-    margin-right: 0;
+	text-align: center;
+	margin-right: 0;
 }
 
 .email-input {
-    margin: 10px 0px;
-    border: 1px solid rgba(128, 128, 128, 0.404);
-    border-radius: 4px;
-    min-height: 30px;
-    padding: 5px 10px;
+	margin: 10px 0px;
+	border: 1px solid rgba(128, 128, 128, 0.404);
+	border-radius: 4px;
+	min-height: 30px;
+	padding: 5px 10px;
 }
 
 .email-input:focus {
-    outline-width: 0;
-    box-shadow:rgb(32, 32, 32);
-    box-shadow: 0px 0px 30px 1px rgba(34, 60, 80, 0.15);
+	outline-width: 0;
+	box-shadow: rgb(32, 32, 32);
+	box-shadow: 0px 0px 30px 1px rgba(34, 60, 80, 0.15);
 }
 
 #email-message {
-    resize: vertical;
-    min-height: 150px;
-    height: 150px;
+	resize: vertical;
+	min-height: 150px;
+	height: 150px;
 }
 
 #email-submit-button {
-    background-color: #6D61F5;
-    color: white;
-    font-weight: bold;
-    transition: all 0.3s;
+	background-color: #6d61f5;
+	color: white;
+	font-weight: bold;
+	transition: all 0.3s;
 }
 
 #email-submit-button:hover {
-    background-color: #4f45bb;
+	background-color: #4f45bb;
 }
 
 #contact-info-div {
-    margin-left: 0;
+	margin-left: 0;
 }
 
 #contact-info-div p {
-    font-size: 19px;
-    color: rgb(92, 92, 92);
-    margin: 40px 0px;
+	font-size: 19px;
+	color: rgb(92, 92, 92);
+	margin: 40px 0px;
 }
 
 #contact-info-div a {
-    font-size: 21px;
-    color: rgb(92, 92, 92);
-    transition: color 0.3s;
+	font-size: 21px;
+	color: rgb(92, 92, 92);
+	transition: color 0.3s;
 }
 
 #contact-info-div a:hover {
-    color: rgb(85, 46, 175);
+	color: rgb(85, 46, 175);
 }
 
 #email-success-div {
-    background-color: rgb(97, 214, 97);
-    color: white;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 5px;
+	background-color: rgb(97, 214, 97);
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 5px;
 }
 
 #google-map {
-    margin-top: 20px;
-    /* box-shadow: 0 0 50px 20px rgba(128, 128, 128, 0.089); */
+	margin-top: 20px;
+	/* box-shadow: 0 0 50px 20px rgba(128, 128, 128, 0.089); */
 }

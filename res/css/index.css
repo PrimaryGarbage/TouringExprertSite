@@ -1,40 +1,66 @@
-
 #dynamic-img-box {
-    overflow: hidden;
-    height: 65vh;
-    position: relative;
+	overflow: hidden;
+	height: 65vh;
+	position: relative;
 }
 
 #dynamic-img {
-    width: 100%;
-    position: absolute;
-    z-index: -1;
+	width: 100%;
+	position: absolute;
+	z-index: -1;
 }
 
 #dynamic-img-box #center-logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: rgb(255, 255, 255);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	color: rgb(255, 255, 255);
 }
 
 #dynamic-img-box #center-logo p {
-    letter-spacing: 4px;
-    font-size: 18px;
+	letter-spacing: 4px;
+	font-size: 18px;
 }
 
 .section-box {
-    background-color: white;
-    height: 450px;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-    font-size: 13px;
-    letter-spacing: 2px;
+	background-color: white;
+	min-height: 400px;
+	padding: 20px;
+	box-sizing: border-box;
+	text-align: center;
+	font-size: 13px;
+	letter-spacing: 2px;
 }
 
 .section-box:nth-of-type(even) {
-    background-color: rgb(247, 247, 247);
+	background-color: rgb(247, 247, 247);
+}
+
+.paragraph-content {
+	line-height: 200%;
+	font-size: 17px;
+}
+
+#dynamic-paragraph {
+	color: rgb(149, 132, 247);
+	height: fit-content;
+	font-size: 49px;
+	margin: 10px;
+	letter-spacing: 1px;
+	font-weight: bold;
+	border-right: 5px solid rgb(209, 201, 255);
+	padding-right: 20px;
+	padding-bottom: 10px;
+	overflow: hidden;
+	transform: scale(100%, 0%);
+}
+
+#dynamic-paragraph p {
+	margin: 0px 10px 50px 10px;
+}
+
+#dynamic-paragraph p:last-child {
+	margin: 0px 10px 0px 10px;
 }
