@@ -54,11 +54,11 @@
 #dynamic-paragraph {
 	color: rgb(149, 132, 247);
 	height: fit-content;
-	font-size: 46px;
+	font-size: 50px;
 	margin: 10px;
 	letter-spacing: 1px;
 	font-weight: bold;
-	border-right: 5px solid rgb(209, 201, 255);
+	border-right: 5px solid rgb(149, 132, 247);
 	padding-right: 10px;
 	padding-bottom: 10px;
 	overflow: hidden;
@@ -66,6 +66,7 @@
 
 #dynamic-paragraph p {
 	margin: 0px 10px 50px 10px;
+	white-space: nowrap;
 }
 
 #dynamic-paragraph p:last-child {
