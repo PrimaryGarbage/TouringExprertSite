@@ -81,6 +81,7 @@
 	transition: all 0.3s;
 	position: absolute;
 	bottom: 10px;
+	user-select: none;
 }
 
 .more-btn:hover {
@@ -97,4 +98,24 @@
 	font-size: 15px;
 	line-height: 20px;
 	tab-size: 4;
+}
+
+@media screen and (max-width: 970px) {
+	#dynamic-img {
+		width: auto;
+	}
+
+	#dynamic-paragraph {
+		margin: 0;
+	}
+
+	.paragraph-content {
+		line-height: 180%;
+	}
+}
+
+@media screen and (max-width: 1500px) {
+	.paragraph-content {
+		line-height: 150%;
+	}
 }

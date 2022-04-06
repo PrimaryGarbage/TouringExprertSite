@@ -10,19 +10,28 @@ a {
 	text-decoration: none;
 }
 
+header {
+	text-align: center;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 26px;
+	letter-spacing: 2px;
+	border-bottom: 1px solid black;
+}
+
 nav {
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 	position: fixed;
 	top: 0px;
-	width: 100%;
 	background: rgba(255, 255, 255, 0.13);
+	width: 100%;
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	backdrop-filter: blur(9px);
 	-webkit-backdrop-filter: blur(9px);
-	padding: 3px 40px;
-	z-index: 55; /* higher than anything */
+	padding: 3px 0px;
+	z-index: 55;
+	/* higher than anything */
 }
 
 nav img {
@@ -45,6 +54,11 @@ nav img {
 }
 
 .center-70perc {
+	width: 70%;
+	margin: auto;
+}
+
+.center-70perc-dynamic {
 	width: 70%;
 	margin: auto;
 }
@@ -73,7 +87,8 @@ nav img {
 
 .container-flex-element {
 	flex-grow: 1;
-	flex-basis: 1px; /* makes width equal in a flex container */
+	flex-basis: 1px;
+	/* makes width equal in a flex container */
 	margin: 10px;
 }
 
@@ -161,4 +176,23 @@ footer a:hover {
 
 .text-right {
 	text-align: right !important;
+}
+
+@media screen and (max-width: 970px) {
+	.horizontal-container {
+		width: auto;
+		flex-direction: column;
+	}
+
+	footer {
+		font-size: 12px;
+	}
+
+	footer p {
+		margin: 3px;
+	}
+
+	.center-70perc-dynamic {
+		width: 95%;
+	}
 }
