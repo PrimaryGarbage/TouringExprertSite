@@ -1,5 +1,5 @@
 let dynamicImgBox = document.getElementById("dynamic-img-box");
-const bgPath = "./res/img/background/bg";
+const bgPath = "../../res/img/background/bg";
 const bgExtension = ".jpg"
 const bgChangeTime = 10000; // time between bg image chahges
 const maxBgImgScale = 1.3;  // initilial bg image scale
