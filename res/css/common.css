@@ -200,11 +200,15 @@ footer a:hover {
 
 .event-box {
 	background-color: blue;
+	margin: 15px;
 	width: 21vw;
 	height: 21vw;
 	position: relative;
 	cursor: pointer;
 	overflow: hidden;
+	-webkit-box-shadow: 0px 0px 12px 3px rgba(33, 52, 67, 0.15);
+	-moz-box-shadow: 0px 0px 12px 3px rgba(33, 52, 67, 0.15);
+	box-shadow: 0px 0px 12px 3px rgba(33, 52, 67, 0.15);
 }
 
 .event-box:last-child {
@@ -227,7 +231,7 @@ footer a:hover {
 }
 
 .blinder:hover {
-	background-color: rgba(253, 253, 253, 0.68);
+	background-color: rgba(253, 253, 253, 0.55);
 }
 
 .blinder:hover+.event-info-box {
@@ -280,6 +284,7 @@ footer a:hover {
 .page-event-header {
 	color: rgb(83, 83, 83);
 	text-align: left;
+	font-size: 21px;
 }
 
 .page-event-img {
@@ -298,17 +303,18 @@ footer a:hover {
 .return-home-a {
 	font-size: 20px;
 	color: rgb(41, 41, 41);
-	display: block;
-	margin: 20px 0px;
+	display: inline-block;
+	width: 100%;
+	margin: 20px 5px;
 	padding: 5px;
 	text-align: center;
-	background-color: rgb(240, 240, 240);
-	border-radius: 5px;
+	background-color: rgb(246, 246, 246);
+	border-radius: 3px;
 	transition: all 0.2s;
 }
 
 .return-home-a:hover {
-	background-color: rgb(218, 218, 218);
+	background-color: rgb(240, 240, 240);
 	transform: scale(98%)
 }
 
@@ -324,6 +330,10 @@ footer a:hover {
 
 	footer p {
 		margin: 3px;
+	}
+
+	.event-box {
+		height: 60vw;
 	}
 
 	.center-70perc-dynamic {
