@@ -1,11 +1,12 @@
 const selector = document.getElementById("lang-select");
 selector.addEventListener("change", changeLang);
+let lastLang = selector.value;
 
 function changeLang(event)
 {
-    const lang = event.target.value;
+    const lang = event.target.value ;
     const href = window.location.href;
-    const pageName = href.split('/').at(-1);
-    let newURL = `../${lang}/${pageName}`;
-    window.location.href = newURL;
+    let newPath = href.replace(`/${lastLang}/`, `/${lang}/`);
+    lastLang = lang;
+    window.location.href = newPath;
 }
