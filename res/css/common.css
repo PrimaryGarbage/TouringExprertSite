@@ -68,6 +68,11 @@ nav img {
 	margin: auto;
 }
 
+.center-80perc-dynamic {
+	width: 80%;
+	margin: auto;
+}
+
 .center-70 {
 	width: 1400vw;
 	margin: auto;
@@ -181,9 +186,7 @@ footer a:hover {
 .horizontal-swipe-container {
 	/* background-color: yellow; */
 	overflow: hidden;
-	margin: auto;
 	white-space: nowrap;
-	width: 80%;
 }
 
 .stripe3-swipe-subcontainer {
@@ -201,6 +204,7 @@ footer a:hover {
 	height: 21vw;
 	position: relative;
 	cursor: pointer;
+	overflow: hidden;
 }
 
 .event-box:last-child {
@@ -246,17 +250,17 @@ footer a:hover {
 }
 
 .event-info-box-date {
-	letter-spacing: 5px;
-	font-size: 10px;
+	letter-spacing: 0.3vw;
+	font-size: 0.6vw;
 }
 
 .event-info-box-header {
-	font-size: 20px;
+	font-size: 2vw;
 	font-weight: normal;
 }
 
 .event-info-box-info {
-	font-size: 14px;
+	font-size: 1vw;
 	color: rgba(0, 0, 0, 0);
 	transition: color 0.2s ease-in-out;
 }
@@ -323,6 +327,10 @@ footer a:hover {
 	}
 
 	.center-70perc-dynamic {
+		width: 95%;
+	}
+
+	.center-80perc-dynamic {
 		width: 95%;
 	}
 }
