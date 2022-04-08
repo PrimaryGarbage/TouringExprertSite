@@ -293,6 +293,28 @@ footer a:hover {
 	transform: scale(0.9, 0.9);
 }
 
+.event-dot {
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	display: inline-block;
+	margin: 20px 10px;
+	transition: all 0.8s;
+	border-radius: 100px;
+	background-color: rgb(220, 220, 220);
+}
+
+.event-dot-active {
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	display: inline-block;
+	margin: 20px 10px;
+	transition: all 0.8s;
+	border-radius: 100px;
+	background-color: rgb(144, 127, 238);
+}
+
 .page-event-header {
 	color: rgb(83, 83, 83);
 	text-align: left;

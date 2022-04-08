@@ -1,9 +1,3 @@
-const dotSize = "15px";
-const dotColorIdle = "rgb(220, 220, 220)";
-const dotColorActive = "rgb(176, 85, 237)"
-const dotMarginHor = "20px";
-const dotMarginVer = "10px";
-const dotTransitionTime = "0.8s";
 const widthThreshold = 970;
 
 const containerElements = document.getElementsByClassName("horizontal-swipe-container");
@@ -58,28 +52,26 @@ function init()
         const nextBtn = c.getElementsByClassName("next-event-btn")[0];
         prevBtn.addEventListener("click", prev);
         nextBtn.addEventListener("click", next);
-    
-        let dotsContainer;
-        if(c.getAttribute("dots") == "true")
+        if(c.getAttribute("nav-buttons") == "false")
         {
-            dotsContainer = document.createElement("div");
-            for(let i = 0; i < stripes.length; ++i)
-            {
-                let dot = document.createElement("span");
-                dot.style.display = "inline-block";
-                dot.style.width = dotSize;
-                dot.style.height = dotSize;
-                dot.style.backgroundColor = dotColorIdle;
-                dot.style.borderRadius = "50px";
-                dot.style.margin = dotMarginVer + " " + dotMarginHor;
-                dot.style.transition = "all " + dotTransitionTime;
-                dot.style.cursor = "pointer";
-                dot.setAttribute("index", i);
-                dot.addEventListener("click", dotClicked);
-                dotsContainer.appendChild(dot);
-            }
-            dotsContainer.childNodes[0].style.backgroundColor = dotColorActive;
-            c.insertBefore(dotsContainer, prevBtn.parentElement);
+            prevBtn.style.display = "none";
+            nextBtn.style.display = "none";
+        }
+    
+        let dotsContainer = document.createElement("div");
+        for(let i = 0; i < stripes.length; ++i)
+        {
+            let dot = document.createElement("span");
+            dot.classList += "event-dot";
+            dot.setAttribute("index", i);
+            dot.addEventListener("click", dotClicked);
+            dotsContainer.appendChild(dot);
+        }
+        dotsContainer.childNodes[0].classList = "event-dot-active";
+        c.insertBefore(dotsContainer, prevBtn.parentElement);
+        if(c.getAttribute("dots") == "false")
+        {
+            dotsContainer.style.display = "none";
         }
 
         containers.push(new Container(c, stripes, prevBtn, nextBtn, dotsContainer));
@@ -110,9 +102,9 @@ function next(event)
         {
             for(dot of container.dotsContainerElement.childNodes)
             {
-                dot.style.backgroundColor = dotColorIdle;
+                dot.classList = "event-dot";
             }
-            container.dotsContainerElement.childNodes[Math.abs(container.positionX / 100.0)].style.backgroundColor = dotColorActive;
+            container.dotsContainerElement.childNodes[Math.abs(container.positionX / 100.0)].classList = "event-dot-active";
         }
     }
 }
@@ -141,9 +133,9 @@ function prev(event)
         {
             for(dot of container.dotsContainerElement.childNodes)
             {
-                dot.style.backgroundColor = dotColorIdle;
+                dot.classList = "event-dot";
             }
-            container.dotsContainerElement.childNodes[Math.abs(container.positionX / 100.0)].style.backgroundColor = dotColorActive;
+            container.dotsContainerElement.childNodes[Math.abs(container.positionX / 100.0)].classList = "event-dot-active";
         }
     }
 }
@@ -175,9 +167,9 @@ function goto(index, container)
     {
         for(dot of container.dotsContainerElement.childNodes)
         {
-            dot.style.backgroundColor = dotColorIdle;
+            dot.classList = "event-dot";
         }
-        container.dotsContainerElement.childNodes[Math.abs(container.positionX / 100.0)].style.backgroundColor = dotColorActive;
+        container.dotsContainerElement.childNodes[Math.abs(container.positionX / 100.0)].classList = "event-dot-active";
     }
 }
 
