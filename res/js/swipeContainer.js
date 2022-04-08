@@ -4,6 +4,7 @@ const dotColorActive = "rgb(176, 85, 237)"
 const dotMarginHor = "20px";
 const dotMarginVer = "10px";
 const dotTransitionTime = "0.8s";
+const widthThreshold = 970;
 
 const containerElements = document.getElementsByClassName("horizontal-swipe-container");
 let containers = [];
@@ -26,7 +27,24 @@ function init()
 {
     for(c of containerElements)
     {
-        const stripes = c.getElementsByClassName("stripe3-swipe-subcontainer");
+        const eventBoxElements = c.querySelectorAll(".event-box");
+        const stripeLength = window.innerWidth > widthThreshold? Number(c.getAttribute("stripe-length")) : Number(c.getAttribute("stripe-length-narrow"));
+        const numberOfStripes = Math.ceil(eventBoxElements.length / stripeLength);
+        const navBtns = c.getElementsByClassName("nav-btns")[0];
+        for(let i = 0; i < numberOfStripes; ++i)
+        {
+            let stripe = document.createElement("div");
+            stripe.classList += "stripe-swipe-subcontainer";
+            stripe.style.gridTemplateColumns = `repeat(${stripeLength}, 1fr)`;
+            for(let j = 0; j < stripeLength && i * stripeLength + j < eventBoxElements.length; ++j)
+            {
+                stripe.appendChild(eventBoxElements[i * stripeLength + j]);
+            }
+            c.insertBefore(stripe, navBtns);
+        }
+
+        const stripes = c.getElementsByClassName("stripe-swipe-subcontainer");
+
         for(s of stripes)
         {
             const eventBoxes = s.getElementsByClassName("event-box");

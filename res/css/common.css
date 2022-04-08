@@ -194,11 +194,10 @@ footer a:hover {
 	opacity: 100%;
 }
 
-.stripe3-swipe-subcontainer {
-	display: inline-flex;
-	justify-content: space-around;
-	align-items: center;
-	/* background-color: red; */
+.stripe-swipe-subcontainer {
+	display: inline-grid;
+	justify-items: center;
+	/* padding: 0 3%; */
 	transition: all 1.0s ease-in-out;
 	width: 100%;
 }
@@ -346,6 +345,7 @@ footer a:hover {
 	}
 
 	.event-box {
+		width: 60vw;
 		height: 60vw;
 	}
 

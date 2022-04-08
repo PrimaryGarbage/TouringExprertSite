@@ -76,7 +76,6 @@
 
 .more-btn {
 	font-size: 30px;
-	background-color: rgba(184, 184, 184, 0.329);
 	border-radius: 6px;
 	cursor: pointer;
 	transition: all 0.3s;
@@ -85,11 +84,12 @@
 	bottom: 10px;
 	user-select: none;
 	width: 20px;
-	padding: 5px;
+	padding: 3px;
+	opacity: 0%;
 }
 
 .more-btn:hover {
-	background-color: rgba(105, 105, 105, 0.637);
+	background-color: rgba(226, 226, 226, 0.637);
 	color: white;
 }
 
@@ -102,6 +102,10 @@
 	font-size: 15px;
 	line-height: 20px;
 	tab-size: 4;
+}
+
+#aboutus-section:hover .more-btn {
+	opacity: 100%;
 }
 
 @media screen and (max-width: 970px) {
