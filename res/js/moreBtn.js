@@ -9,7 +9,7 @@ for(b of moreBtns)
 
 function openMore(event)
 {
-    event.target.style.transform = "rotateX(180deg)"; 
+    event.target.style.transform = "translate(-50%, -50%) rotateX(180deg)"; 
     event.target.parentElement.style.height = "fit-content";
     const oldHeight = event.target.parentElement.offsetHeight;
     defaultHeights[event.target] = oldHeight + "px";
@@ -23,7 +23,7 @@ function openMore(event)
 
 function closeMore(event)
 {
-    event.target.style.transform = "rotateX(0deg)";
+    event.target.style.transform = "translate(-50%, -50%) rotateX(0deg)";
     event.target.parentElement.style.height = defaultHeights[event.target];
     setTimeout(hideMore, hideTimeout, event);
     event.target.removeEventListener("click", closeMore);

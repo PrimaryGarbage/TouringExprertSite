@@ -61,6 +61,7 @@
 	border-right: 5px solid rgb(149, 132, 247);
 	padding-right: 10px;
 	padding-bottom: 10px;
+	padding-top: 10px;
 	overflow: hidden;
 }
 
@@ -76,12 +77,15 @@
 .more-btn {
 	font-size: 30px;
 	background-color: rgba(184, 184, 184, 0.329);
-	border-radius: 12px;
+	border-radius: 6px;
 	cursor: pointer;
 	transition: all 0.3s;
 	position: absolute;
+	transform: translate(-50%, -50%);
 	bottom: 10px;
 	user-select: none;
+	width: 20px;
+	padding: 5px;
 }
 
 .more-btn:hover {
@@ -107,6 +111,7 @@
 
 	#dynamic-paragraph {
 		margin: 0;
+		font-size: 7vw;
 	}
 
 	.paragraph-content {
