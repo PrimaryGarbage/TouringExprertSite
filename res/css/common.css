@@ -194,7 +194,7 @@ footer a:hover {
 	opacity: 100%;
 }
 
-.stripe-swipe-subcontainer {
+.strip-swipe-subcontainer {
 	display: inline-grid;
 	justify-items: center;
 	/* padding: 0 3%; */
@@ -203,7 +203,6 @@ footer a:hover {
 }
 
 .event-box {
-	background-color: blue;
 	margin: 15px 0px;
 	width: 21vw;
 	height: 21vw;
@@ -219,7 +218,7 @@ footer a:hover {
 	margin-right: 0px;
 }
 
-.event-box img {
+.box-img {
 	width: 100%;
 	height: 100%;
 }
@@ -352,6 +351,18 @@ footer a:hover {
 	transform: scale(98%)
 }
 
+.partner-box {
+	margin: 15px 0px;
+	width: 16vw;
+	height: 11vw;
+	cursor: pointer;
+	overflow: hidden;
+	position: relative;
+	border-right: 1px solid rgb(180, 180, 180);
+	border-left: 1px solid rgb(180, 180, 180);
+	padding: 0px 10px;
+}
+
 @media screen and (max-width: 970px) {
 	.horizontal-container {
 		width: auto;
@@ -369,6 +380,11 @@ footer a:hover {
 	.event-box {
 		width: 60vw;
 		height: 60vw;
+	}
+
+	.partner-box {
+		width: 36vw;
+		height: 26vw;
 	}
 
 	.center-70perc-dynamic {

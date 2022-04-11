@@ -4,10 +4,10 @@ const containerElements = document.getElementsByClassName("horizontal-swipe-cont
 let containers = [];
 
 class Container {
-    constructor(containerElement, stripeElements, prevBtn, nextBtn, dotsContainerElement)
+    constructor(containerElement, stripElements, prevBtn, nextBtn, dotsContainerElement)
     {
         this.containerElement = containerElement;
-        this.stripeElements = stripeElements;
+        this.stripElements = stripElements;
         this.prevBtn = prevBtn;
         this.nextBtn = nextBtn;
         this.positionX = 0;
@@ -21,25 +21,27 @@ function init()
 {
     for(c of containerElements)
     {
-        const eventBoxElements = c.querySelectorAll(".event-box");
-        const stripeLength = window.innerWidth > widthThreshold? Number(c.getAttribute("stripe-length")) : Number(c.getAttribute("stripe-length-narrow"));
-        const numberOfStripes = Math.ceil(eventBoxElements.length / stripeLength);
+        let containerChildren = liveToStaticCollection(c.children);
+        containerChildren.pop();
+        const stripLength = window.innerWidth > widthThreshold? Number(c.getAttribute("strip-length")) : Number(c.getAttribute("strip-length-narrow"));
+        const numberOfStrips = Math.ceil(containerChildren.length / stripLength);
         const navBtns = c.getElementsByClassName("nav-btns")[0];
-        for(let i = 0; i < numberOfStripes; ++i)
+        for(let i = 0; i < numberOfStrips; ++i)
         {
-            let stripe = document.createElement("div");
-            stripe.classList += "stripe-swipe-subcontainer";
-            stripe.style.gridTemplateColumns = `repeat(${stripeLength}, 1fr)`;
-            for(let j = 0; j < stripeLength && i * stripeLength + j < eventBoxElements.length; ++j)
+            let strip = document.createElement("div");
+            strip.classList += "strip-swipe-subcontainer";
+            strip.style.gridTemplateColumns = `repeat(${stripLength}, 1fr)`;
+            for(let j = 0; j < stripLength && i * stripLength + j < containerChildren.length; ++j)
             {
-                stripe.appendChild(eventBoxElements[i * stripeLength + j]);
+                const idx = i * stripLength + j;
+                strip.appendChild(containerChildren[idx]);
             }
-            c.insertBefore(stripe, navBtns);
+            c.insertBefore(strip, navBtns);
         }
 
-        const stripes = c.getElementsByClassName("stripe-swipe-subcontainer");
+        const strips = c.getElementsByClassName("strip-swipe-subcontainer");
 
-        for(s of stripes)
+        for(s of strips)
         {
             const eventBoxes = s.getElementsByClassName("event-box");
             for(e of eventBoxes)
@@ -54,12 +56,11 @@ function init()
         nextBtn.addEventListener("click", next);
         if(c.getAttribute("nav-buttons") == "false")
         {
-            prevBtn.style.display = "none";
-            nextBtn.style.display = "none";
+            prevBtn.parentElement.style.display = "none";
         }
     
         let dotsContainer = document.createElement("div");
-        for(let i = 0; i < stripes.length; ++i)
+        for(let i = 0; i < strips.length; ++i)
         {
             let dot = document.createElement("span");
             dot.classList += "event-dot";
@@ -67,14 +68,14 @@ function init()
             dot.addEventListener("click", dotClicked);
             dotsContainer.appendChild(dot);
         }
-        dotsContainer.childNodes[0].classList = "event-dot-active";
+        dotsContainer.children[0].classList = "event-dot-active";
         c.insertBefore(dotsContainer, prevBtn.parentElement);
         if(c.getAttribute("dots") == "false")
         {
             dotsContainer.style.display = "none";
         }
 
-        containers.push(new Container(c, stripes, prevBtn, nextBtn, dotsContainer));
+        containers.push(new Container(c, strips, prevBtn, nextBtn, dotsContainer));
     }
 }
 
@@ -83,16 +84,16 @@ function next(event)
     let container;
     for(c of containers)
     {
-        if(c.nextBtn.isEqualNode(event.target))
+        if(c.containerElement.isEqualNode(event.currentTarget.parentElement.parentElement))
         {
             container = c;
             break;
         }
     }
 
-    if(container.positionX > (container.stripeElements.length - 1) * (-100))
+    if(container.positionX > (container.stripElements.length - 1) * (-100))
     {
-        for(s of container.stripeElements)
+        for(s of container.stripElements)
         {
             s.style.transform = `translateX(${container.positionX - 100}%)`;
         }
@@ -114,7 +115,7 @@ function prev(event)
     let container;
     for(c of containers)
     {
-        if(c.prevBtn.isEqualNode(event.target))
+        if(c.containerElement.isEqualNode(event.target.parentElement.parentElement))
         {
             container = c;
             break;
@@ -123,7 +124,7 @@ function prev(event)
     
     if(container.positionX < 0)
     {
-        for(s of container.stripeElements)
+        for(s of container.stripElements)
         {
             s.style.transform = `translateX(${container.positionX + 100}%)`;
         }
@@ -156,8 +157,8 @@ function dotClicked(event)
 
 function goto(index, container)
 {
-    const newPos = -clamp(100 * index, 0, 100 * (container.stripeElements.length - 1));
-    for(s of container.stripeElements)
+    const newPos = -clamp(100 * index, 0, 100 * (container.stripElements.length - 1));
+    for(s of container.stripElements)
     {
         s.style.transform = `translateX(${newPos}%)`;
     }
@@ -182,4 +183,14 @@ function gotoEventURL(event)
 function clamp(num, min, max)
 {
     return Math.min(Math.max(num, min), max);
+}
+
+function liveToStaticCollection(liveCollection)
+{
+    let staticCollection = [];
+    for(element of liveCollection)
+    {
+        staticCollection.push(element);
+    }
+    return staticCollection;
 }
