@@ -27,6 +27,9 @@ class OneStripContainer {
         this.elementWidth = elementWidth;
         this.maxPosX = maxPosX;
         this.positionX = 0;     // in pixels
+        this.animated = false;
+        this.animationTime = 0;
+        this.animationIntervalID = 0;
     }
 }
 
@@ -154,7 +157,9 @@ function initOneStripContainer(container)
     const animTime = container.getAttribute("animation-time");
     if(animTime)
     {
-        animateOneStripContainer(newContainer, animTime);
+        newContainer.animated = true;
+        newContainer.animationTime = animTime;
+        animateOneStripContainer(newContainer);
     }
 
     containers.push(newContainer);
@@ -268,7 +273,7 @@ function nextOneStrip(event)
         }
     }
 
-    if(Math.round(container.positionX) > container.maxPosX)
+    if(container.positionX > container.maxPosX)
     {
         const newPos = container.positionX - container.elementWidth - container.gap;
         container.stripElement.style.transform = `translateX(${newPos}px)`;
@@ -289,6 +294,8 @@ function nextOneStrip(event)
     {
         gotoOneStrip(0, container);
     }
+
+    if(container.animated) resetAnimationOneStripContainer(container);
 }
 
 function prevOneStrip(event)
@@ -303,7 +310,7 @@ function prevOneStrip(event)
         }
     }
 
-    if(Math.round(container.positionX) < 0)
+    if(container.positionX <= 0)
     {
         const newPos = container.positionX + container.elementWidth + container.gap;
         container.stripElement.style.transform = `translateX(${newPos}px)`;
@@ -324,6 +331,8 @@ function prevOneStrip(event)
     {
         gotoOneStrip(container.stripElement.children.length - container.containerElement.getAttribute("strip-length"), container);
     }
+
+    if(container.animated) resetAnimationOneStripContainer(container);
 }
 
 function dotClickedOneStrip(event)
@@ -338,6 +347,8 @@ function dotClickedOneStrip(event)
         }
     }
     gotoOneStrip(Number(event.currentTarget.getAttribute("index")), container);
+
+    if(container.animated) resetAnimationOneStripContainer(container);
 }
 
 function gotoOneStrip(index, container)
@@ -381,10 +392,16 @@ function pxtovw(px)
     return px / window.innerWidth * 100;
 }
 
-function animateOneStripContainer(container, switchTime)
+function animateOneStripContainer(container)
 {
-    setInterval(() => { 
+    container.animationIntervalID = setInterval(() => { 
         const event = new Event("click");
         container.nextBtn.dispatchEvent(event);
-    }, switchTime)
+    }, container.animationTime)
+}
+
+function resetAnimationOneStripContainer(container)
+{
+    clearInterval(container.animationIntervalID);
+    animateOneStripContainer(container);
 }
