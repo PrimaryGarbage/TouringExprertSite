@@ -2,7 +2,7 @@ const stateMachine = new StateMachine(6);
 const dynP = document.getElementById("dynamic-paragraph");
 const paragraphs = dynP.children;
 
-const maxPosition = 107;
+const maxPosition = 100;
 let position = maxPosition;
 const positionDelta = 2;
 

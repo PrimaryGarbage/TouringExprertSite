@@ -38,6 +38,18 @@ nav img {
 	border-bottom: 1px solid black;
 }
 
+.relative {
+	position: relative;
+}
+
+.z-up {
+	z-index: 1;
+}
+
+.z-down {
+	z-index: 0;
+}
+
 .center-65 {
 	width: 1300px;
 	margin: auto;
@@ -81,6 +93,7 @@ nav img {
 .horizontal-container {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	flex-direction: row;
 }
 
@@ -363,6 +376,8 @@ footer a:hover {
 	padding: 0px 10px;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
 @media screen and (max-width: 970px) {
 	.horizontal-container {
 		width: auto;
@@ -394,4 +409,14 @@ footer a:hover {
 	.center-80perc-dynamic {
 		width: 95%;
 	}
+}
+
+@font-face {
+	font-family: "Jost";
+	src: url(../fonts/Jost-VariableFont_wght.ttf);
+}
+
+@font-face {
+	font-family: "Ubuntu-Mono";
+	src: url(../fonts/UbuntuMono-Regular.ttf);
 }
