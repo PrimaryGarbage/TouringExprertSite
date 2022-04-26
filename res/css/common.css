@@ -2,7 +2,7 @@ body {
 	box-sizing: content-box;
 	margin: 0px;
 	padding: 0px;
-	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	font-family: "PT Sans", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 a {
@@ -419,4 +419,14 @@ footer a:hover {
 @font-face {
 	font-family: "Ubuntu-Mono";
 	src: url(../fonts/UbuntuMono-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Nunito";
+	src: url(../fonts/Nunito-VariableFont_wght.ttf);
+}
+
+@font-face {
+	font-family: "PT Sans";
+	src: url(../fonts/PTSans-Regular.ttf);
 }
