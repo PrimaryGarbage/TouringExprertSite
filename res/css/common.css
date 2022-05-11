@@ -6,7 +6,7 @@ body {
 }
 
 a {
-	color: black;
+	color: rgb(52, 120, 62);
 	text-decoration: none;
 	transition: color 0.3s;
 }
@@ -366,7 +366,10 @@ footer a:hover {
 
 .return-home-a:hover {
 	background-color: rgb(240, 240, 240);
-	transform: scale(98%)
+	transform: scale(102%);
+	-webkit-box-shadow: 4px 4px 12px 4px rgba(34, 60, 80, 0.14);
+	-moz-box-shadow: 4px 4px 12px 4px rgba(34, 60, 80, 0.14);
+	box-shadow: 4px 4px 12px 4px rgba(34, 60, 80, 0.14);
 }
 
 .partner-box {
