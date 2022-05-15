@@ -5,8 +5,8 @@ if (/^ru\b/.test(navigator.language))
 }
 else
 {
-    //window.location.href = "./html/en/index.html";
+    window.location.href = "./html/en/index.html";
 
     // until english part of site isn't implemented
-    window.location.href = "./html/ru/index.html";
+    // window.location.href = "./html/ru/index.html";
 }
