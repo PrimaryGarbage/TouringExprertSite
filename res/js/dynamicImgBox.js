@@ -5,7 +5,7 @@ const bgChangeTime = 10000; // time between bg image chahges
 const maxBgImgScale = 1.3;  // initilial bg image scale
 
 setNextBg.currentBg = 0;
-setNextBg.maxBg = 6;
+setNextBg.maxBg = 9;
 setNextBg.scaleDelta = 0.0004;
 setNextBg.opacityDelta = 0.008;
 setNextBg.currentImg = null;
@@ -84,7 +84,7 @@ setInterval(setNextBg, bgChangeTime);
 function setNextBg()
 {
     setNextBg.currentBg += 1;
-    if(setNextBg.currentBg >= setNextBg.maxBg) setNextBg.currentBg = 1;
+    if(setNextBg.currentBg > setNextBg.maxBg) setNextBg.currentBg = 1;
     const newImg = new DynamicImg(dynamicImgBox, "dynamic-img", setNextBg.currentBg, setNextBg.scaleDelta, setNextBg.opacityDelta);
     if(setNextBg.currentImg) setNextBg.currentImg.remove();
     setNextBg.currentImg = newImg;
