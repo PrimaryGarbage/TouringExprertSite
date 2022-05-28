@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style2.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="./part1.html"><div class="nav-option">Part 1</div></a>
+        <a href="./part2.html"><div class="nav-option active">Part 2</div></a>
+    </nav>
+
+    <div id="main">
+        <div id="background"></div>
+        <img src="./img/trashcan_closed.png" alt="" id="trashcan">
+        <div id="gameover">
+            <p style="margin-top: 180px;">Game Over</p>
+            <p id="score"></p>
+            <p>Start again?</p>
+            <button id="startagain-yes">yes</button>
+            <button id="startagain-no">no</button>
+        </div>
+        <div id="menu">
+            <p style="margin-top: 100px; font-size: 28px; color: rgb(0, 228, 0);">Очистите город от мусора!</p>
+            <p >Правила:</p>
+            <p>-Если мусора скопилось слишком много - вы проиграли.</p>
+            <p style="font-size: 14px;">(Подсказка: некоторые экземпляры мусора "хуже" других)</p>
+            <button id="startgame">Start Game</button>
+        </div>
+    </div>
+
+    <div id="scoreTable"></div>
+
+    <script src="./scripts/script2.js"></script>
+</body>
+</html>
