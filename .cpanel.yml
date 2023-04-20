@@ -1,5 +1,5 @@
 deployment:
   tasks:
-    - export REPOPATH=/home/artstudi/repositories/TouringExpertSite/*
+    - export REPOPATH=/home/artstudi/repositories/TouringExpertSite/
     - export SITEPATH=/home/artstudi/public_html/
     - /bin/rsync -rav --exclude '.git' --exclude '.cpanel.yml' --del $REPOPATH $SITEPATH
