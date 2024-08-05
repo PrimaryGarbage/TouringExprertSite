@@ -1,5 +1,6 @@
+---
 deployment:
   tasks:
-    - export REPOPATH="/home/artstudi/repositories/TouringExpertSite/"
-    - export SITEPATH="/home/artstudi/public_html/"
-    - /bin/cp -r $REPOPATH $SITEPATH
+    - export DEPLOYPATH=/home/example/public_html/
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp style.css $DEPLOYPATH
